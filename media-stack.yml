@@ -1,0 +1,34 @@
+# Stack "media" (Jellyfin) — gerado a partir do serviço em execução em 2026-11-08.
+# Deploy: docker stack deploy -c /mnt/ssd/@docker/jellyfin/media-stack.yml media
+version: "3.8"
+
+services:
+  media:
+    image: lscr.io/linuxserver/jellyfin:latest
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Lisbon
+    volumes:
+      - /mnt/ssd/@docker/jellyfin/config:/config
+      - /mnt/ssd/@docker/jellyfin/movies:/movies
+      - /mnt/ssd/@docker/jellyfin/tv:/tv
+      - /mnt/ssd/@docker/jellyfin/desenhos:/desenhos
+    ports:
+      - target: 8096
+        published: 8096
+        protocol: tcp
+        mode: host
+    networks:
+      - proxy_net
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: any
+        delay: 5s
+
+networks:
+  proxy_net:
+    external: true

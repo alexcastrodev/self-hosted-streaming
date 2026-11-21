@@ -1,0 +1,15 @@
+# Whitelist: ignora tudo, versiona só configuração sem secrets
+/*
+!/.gitignore
+!/README.md
+!/media-stack.yml
+!/config/
+/config/*
+!/config/*.xml
+!/config/logging.default.json
+!/config/data/
+/config/data/*
+!/config/data/root/
+!/config/data/plugins/
+/config/data/plugins/*
+!/config/data/plugins/configurations/
