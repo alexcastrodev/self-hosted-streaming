@@ -31,3 +31,11 @@ Requer a rede externa `proxy_net`. Web UI na porta 8096.
 | Séries             | `/tv`                |
 | Desenhos           | `/desenhos/series`   |
 | Filmes de Desenho  | `/desenhos/filmes`   |
+
+
+
+## Pra iniciantes
+
+```
+docker compose up -d
+```

@@ -2,6 +2,7 @@
 /*
 !/.gitignore
 !/README.md
+!/docker-compose.yml
 !/media-stack.yml
 !/config/
 /config/*

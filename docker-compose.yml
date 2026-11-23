@@ -1,0 +1,10 @@
+services:
+  media:
+    image: lscr.io/linuxserver/jellyfin:latest
+    volumes:
+      - ./config:/config
+      - ./movies:/movies
+      - ./tv:/tv
+      - ./desenhos:/desenhos
+    ports:
+      - "8096:8096"
